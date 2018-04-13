@@ -25,6 +25,12 @@ public class App {
         beverages = scanner.nextLine();
       }
 
+      System.out.println("Choose food preferences: French, Italian or traditional.");
+      String food = scanner.nextLine();
+      while (!newPlan.setFood(food)) {
+        food = scanner.nextLine();
+      }
+
 
     } while (chooseVenues);
   }
