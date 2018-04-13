@@ -36,6 +36,12 @@ public class App {
       while (!newPlan.setEntertainment(entertainment)) {
         entertainment = scanner.nextLine();
       }
+
+      System.out.println("Choose location: restaurant, ranch or hotel suite.");
+      String location = scanner.nextLine();
+      while (!newPlan.setLocation(location)) {
+        location = scanner.nextLine();
+      }
     } while (chooseVenues);
   }
 
