@@ -31,7 +31,11 @@ public class App {
         food = scanner.nextLine();
       }
 
-
+      System.out.println("Choose entertainment preferences: DJ, local band or both.");
+      String entertainment = scanner.nextLine();
+      while (!newPlan.setEntertainment(entertainment)) {
+        entertainment = scanner.nextLine();
+      }
     } while (chooseVenues);
   }
 
