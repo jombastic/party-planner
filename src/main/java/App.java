@@ -19,6 +19,13 @@ public class App {
         numberString = scanner.nextLine();
       }
 
+      System.out.println("Choose beverage preferences: non-alcohol, alcohol or full bar.");
+      String beverages = scanner.nextLine();
+      while (!newPlan.setDrinkType(beverages)) {
+        beverages = scanner.nextLine();
+      }
+
+
     } while (chooseVenues);
   }
 
