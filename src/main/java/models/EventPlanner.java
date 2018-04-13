@@ -5,6 +5,7 @@ public class EventPlanner {
   private String drinkType;
   private String[] drinks = {"non-alcohol", "alcohol", "full bar"};
   private String food;
+  private String[] foodTypes = {"French", "Italian", "Traditional"};
   private String entertainment;
   private String location;
 
@@ -41,8 +42,8 @@ public class EventPlanner {
   }
 
   public boolean setDrinkType(String drinkType) {
-    for (int i = 0; i < drinks.length; i++) {
-      if (drinkType.equals(drinks[i])) {
+    for (String drink : drinks) {
+      if (drinkType.equalsIgnoreCase(drink)) {
         return true;
       } else {
         this.drinkType = drinkType;
@@ -50,6 +51,19 @@ public class EventPlanner {
     }
     System.out.println("Beverage type not recognised. Please enter from the following:" +
     String.join(", ", drinks));
+    return false;
+  }
+
+  public boolean setFood(String food) {
+    for (String foodType : foodTypes) {
+      if (food.equalsIgnoreCase(foodType)) {
+        return true;
+      } else {
+        this.food = food;
+      }
+    }
+    System.out.println("Food type not recognised. Please enter from the following:" +
+            String.join(", ", foodTypes));
     return false;
   }
 }

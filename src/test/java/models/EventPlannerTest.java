@@ -22,4 +22,10 @@ public class EventPlannerTest {
     EventPlanner testPlanner = new EventPlanner();
     assertEquals(false, testPlanner.setDrinkType("booze"));
   }
+
+  @Test
+  public void setFood_checkIfFoodIsAnOption_true() {
+    EventPlanner testPlanner = new EventPlanner();
+    assertEquals(true, testPlanner.setFood("french"));
+  }
 }
