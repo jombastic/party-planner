@@ -1,15 +1,17 @@
 package models;
 
 public class EventPlanner {
+  private double eventCost;
   private int guests;
   private String drinkType;
   private String[] drinks = {"non-alcohol", "alcohol", "full bar"};
+  //private boolean[] drink
   private String food;
   private String[] foodTypes = {"French", "Italian", "Traditional"};
   private String entertainment;
   private String[] entertainmentTypes = {"DJ", "Local Band", "Both"};
   private String location;
-  private String[] locationTypes = {"Restaurant", "ranch", "hotel suite"};
+  private String[] locationTypes = {"Restaurant", "Ranch", "Hotel suite"};
 
   /*public EventPlanner(int guests, String drinkType, String food, String entertainment, String location) {
     this.guests = guests;
@@ -46,25 +48,23 @@ public class EventPlanner {
   public boolean setDrinkType(String drinkType) {
     for (String drink : drinks) {
       if (drinkType.equalsIgnoreCase(drink)) {
-        return true;
-      } else {
         this.drinkType = drinkType;
+        return true;
       }
     }
-    System.out.println("Beverage type not recognised. Please enter from the following:" +
-    String.join(", ", drinks));
+    System.out.println("Beverage type not recognised. Please enter from the following: " +
+            String.join(", ", drinks));
     return false;
   }
 
   public boolean setFood(String food) {
     for (String foodType : foodTypes) {
       if (food.equalsIgnoreCase(foodType)) {
-        return true;
-      } else {
         this.food = food;
+        return true;
       }
     }
-    System.out.println("Food type not recognised. Please enter from the following:" +
+    System.out.println("Food type not recognised. Please enter from the following: " +
             String.join(", ", foodTypes));
     return false;
   }
@@ -72,12 +72,11 @@ public class EventPlanner {
   public boolean setEntertainment(String entertainment) {
     for (String entertainmentType : entertainmentTypes) {
       if (entertainment.equalsIgnoreCase(entertainmentType)) {
-        return true;
-      } else {
         this.entertainment = entertainment;
+        return true;
       }
     }
-    System.out.println("Entertainment type not recognised. Please enter from the following:" +
+    System.out.println("Entertainment type not recognised. Please enter from the following: " +
             String.join(", ", entertainmentTypes));
     return false;
   }
@@ -85,12 +84,11 @@ public class EventPlanner {
   public boolean setLocation(String location) {
     for (String locationType : locationTypes) {
       if (location.equalsIgnoreCase(locationType)) {
-        return true;
-      } else {
         this.location = location;
+        return true;
       }
     }
-    System.out.println("Location type not recognised. Please enter from the following:" +
+    System.out.println("Location type not recognised. Please enter from the following: " +
             String.join(", ", locationTypes));
     return false;
   }

@@ -52,4 +52,10 @@ public class EventPlannerTest {
     EventPlanner testPlanner = new EventPlanner();
     assertEquals(true, testPlanner.setLocation("ranch"));
   }
+
+  @Test
+  public void setLocation_checkIfFalseLocation_false() {
+    EventPlanner testPlanner = new EventPlanner();
+    assertEquals(false, testPlanner.setLocation("moon"));
+  }
 }
