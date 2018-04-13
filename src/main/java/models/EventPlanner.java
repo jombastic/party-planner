@@ -1,6 +1,7 @@
 package models;
 
 public class EventPlanner {
+  private int fullCost;
   private int eventCost;
   private int guests;
   private String drinkType;
@@ -107,5 +108,9 @@ public class EventPlanner {
   public String getReceipt() {
     return String.format("Guests: %d\nDrinks: %s\nFood: %s\nEntertainment: %s\nLocation: %s\nCost of event: %d",
             this.guests, this.drinkType, this.food, this.entertainment, this.location, this.eventCost);
+  }
+
+  public int getFullCost() {
+    return fullCost += eventCost;
   }
 }

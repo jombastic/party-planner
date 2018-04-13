@@ -68,4 +68,10 @@ public class EventPlannerTest {
             testPlanner.getEventCost());
     assertEquals(receipt, testPlanner.getReceipt());
   }
+
+  @Test
+  public void getFullCost_getTheFullCost_int() {
+    EventPlanner testPlanner = new EventPlanner(10, "alcohol", "traditional", "local band", "ranch");
+    assertEquals(0, testPlanner.getFullCost());
+  }
 }
