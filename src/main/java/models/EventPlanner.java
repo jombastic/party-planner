@@ -5,13 +5,16 @@ public class EventPlanner {
   private int guests;
   private String drinkType;
   private String[] drinks = {"non-alcohol", "alcohol", "full bar"};
-  //private boolean[] drink
+  private int[] drinkCosts = {5, 10, 20};
   private String food;
   private String[] foodTypes = {"French", "Italian", "Traditional"};
+  private int[] foodCosts = {20, 25, 30};
   private String entertainment;
   private String[] entertainmentTypes = {"DJ", "Local Band", "Both"};
+  private int[] entertainmentCosts = {10, 50, 60};
   private String location;
   private String[] locationTypes = {"Restaurant", "Ranch", "Hotel suite"};
+  private int[] locationCosts = {100, 70, 90};
 
   /*public EventPlanner(int guests, String drinkType, String food, String entertainment, String location) {
     this.guests = guests;
@@ -46,8 +49,9 @@ public class EventPlanner {
   }
 
   public boolean setDrinkType(String drinkType) {
-    for (String drink : drinks) {
-      if (drinkType.equalsIgnoreCase(drink)) {
+    for (int i = 0; i < drinks.length; i++) {
+      if (drinkType.equalsIgnoreCase(drinks[i])) {
+        this.eventCost += guests * drinkCosts[i];
         this.drinkType = drinkType;
         return true;
       }
@@ -58,8 +62,9 @@ public class EventPlanner {
   }
 
   public boolean setFood(String food) {
-    for (String foodType : foodTypes) {
-      if (food.equalsIgnoreCase(foodType)) {
+    for (int i = 0; i < foodTypes.length; i++) {
+      if (food.equalsIgnoreCase(foodTypes[i])) {
+        this.eventCost += guests * foodCosts[i];
         this.food = food;
         return true;
       }
@@ -70,8 +75,9 @@ public class EventPlanner {
   }
 
   public boolean setEntertainment(String entertainment) {
-    for (String entertainmentType : entertainmentTypes) {
-      if (entertainment.equalsIgnoreCase(entertainmentType)) {
+    for (int i = 0; i < entertainmentTypes.length; i++) {
+      if (entertainment.equalsIgnoreCase(entertainmentTypes[i])) {
+        this.eventCost += entertainmentCosts[i];
         this.entertainment = entertainment;
         return true;
       }
@@ -82,8 +88,9 @@ public class EventPlanner {
   }
 
   public boolean setLocation(String location) {
-    for (String locationType : locationTypes) {
-      if (location.equalsIgnoreCase(locationType)) {
+    for (int i = 0; i < locationTypes.length; i++) {
+      if (location.equalsIgnoreCase(locationTypes[i])) {
+        this.eventCost += locationCosts[i];
         this.location = location;
         return true;
       }
@@ -91,5 +98,9 @@ public class EventPlanner {
     System.out.println("Location type not recognised. Please enter from the following: " +
             String.join(", ", locationTypes));
     return false;
+  }
+
+  private void calculateCost() {
+
   }
 }
