@@ -40,4 +40,10 @@ public class EventPlannerTest {
     EventPlanner testPlanner = new EventPlanner();
     assertEquals(true, testPlanner.setEntertainment("DJ"));
   }
+
+  @Test
+  public void setEntertainment_checkIfEntertainmentIsIncluded_false() {
+    EventPlanner testPlanner = new EventPlanner();
+    assertEquals(false, testPlanner.setEntertainment("metallica"));
+  }
 }
