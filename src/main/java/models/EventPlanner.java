@@ -25,6 +25,9 @@ public class EventPlanner {
     this.location = location;
   }
 
+  public EventPlanner() {
+  };
+
   public int getGuests() {
     return guests;
   }

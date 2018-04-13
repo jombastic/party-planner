@@ -8,10 +8,10 @@ public class App {
   public static void main(String[] args) {
     Scanner scanner = new Scanner(System.in);
     //String beverages;
-    EventPlanner newPlan = new EventPlanner(0, null, null, null, null);
+    EventPlanner newPlan = new EventPlanner();
     System.out.println("Welcome to the ultimate party planer!");
     System.out.println("Select from our offers and enjoy the parties of a lifetime");
-    boolean chooseVenues;
+    boolean newParty;
     int guests = 0;
     do {
       while (guests <= 0) {
@@ -53,7 +53,7 @@ public class App {
       System.out.println("----------------------------");
       System.out.println(newPlan.getReceipt());
       System.out.println("----------------------------");
-      System.out.println("The full cost of all venues is: " + newPlan.getFullCost());
+      System.out.println("The full cost for all parties is: " + newPlan.getFullCost());
 
       String anotherParty;
       do {
@@ -62,11 +62,11 @@ public class App {
       } while ((!anotherParty.equalsIgnoreCase("y")) && (!anotherParty.equalsIgnoreCase("n")));
 
       if (anotherParty.equalsIgnoreCase("y")) {
-        chooseVenues = true;
+        newParty = true;
       } else {
-        chooseVenues = false;
+        newParty = false;
       }
-    } while (chooseVenues);
+    } while (newParty);
   }
 
   public static boolean isNumber(String numberString) {
