@@ -5,7 +5,6 @@ public class EventPlanner {
   private String drinkType;
   private String food;
   private String entertainment;
-  private String location;
 
   public EventPlanner(int guests, String drinkType, String food, String entertainment, String location) {
     this.guests = guests;
@@ -14,4 +13,28 @@ public class EventPlanner {
     this.entertainment = entertainment;
     this.location = location;
   }
+
+  public int getGuests() {
+    return guests;
+  }
+
+  public String getDrinkType() {
+    return drinkType;
+  }
+
+  public String getFood() {
+    return food;
+  }
+
+  public String getEntertainment() {
+    return entertainment;
+  }
+
+  public String getLocation() {
+    return location;
+  }
+
+  private String location;
+
+
 }
