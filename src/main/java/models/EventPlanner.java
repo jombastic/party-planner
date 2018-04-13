@@ -1,7 +1,7 @@
 package models;
 
 public class EventPlanner {
-  private double eventCost;
+  private int eventCost;
   private int guests;
   private String drinkType;
   private String[] drinks = {"non-alcohol", "alcohol", "full bar"};
@@ -16,13 +16,13 @@ public class EventPlanner {
   private String[] locationTypes = {"Restaurant", "Ranch", "Hotel suite"};
   private int[] locationCosts = {100, 70, 90};
 
-  /*public EventPlanner(int guests, String drinkType, String food, String entertainment, String location) {
+  public EventPlanner(int guests, String drinkType, String food, String entertainment, String location) {
     this.guests = guests;
     this.drinkType = drinkType;
     this.food = food;
     this.entertainment = entertainment;
     this.location = location;
-  }*/
+  }
 
   public int getGuests() {
     return guests;
@@ -42,6 +42,10 @@ public class EventPlanner {
 
   public String getLocation() {
     return location;
+  }
+
+  public int getEventCost() {
+    return this.eventCost;
   }
 
   public void setGuests(int guests) {
@@ -100,7 +104,8 @@ public class EventPlanner {
     return false;
   }
 
-  private void calculateCost() {
-
+  public String getReceipt() {
+    return String.format("Guests: %d\nDrinks: %s\nFood: %s\nEntertainment: %s\nLocation: %s\nCost of event: %d",
+            this.guests, this.drinkType, this.food, this.entertainment, this.location, this.eventCost);
   }
 }
