@@ -7,6 +7,7 @@ public class EventPlanner {
   private String food;
   private String[] foodTypes = {"French", "Italian", "Traditional"};
   private String entertainment;
+  private String[] entertainmentTypes = {"DJ", "Local Band", "Both"};
   private String location;
 
   /*public EventPlanner(int guests, String drinkType, String food, String entertainment, String location) {
@@ -64,6 +65,19 @@ public class EventPlanner {
     }
     System.out.println("Food type not recognised. Please enter from the following:" +
             String.join(", ", foodTypes));
+    return false;
+  }
+
+  public boolean setEntertainment(String entertainment) {
+    for (String entertainmentType : entertainmentTypes) {
+      if (entertainment.equalsIgnoreCase(entertainmentType)) {
+        return true;
+      } else {
+        this.entertainment = entertainment;
+      }
+    }
+    System.out.println("Entertainment type not recognised. Please enter from the following:" +
+            String.join(", ", entertainmentTypes));
     return false;
   }
 }

@@ -34,4 +34,10 @@ public class EventPlannerTest {
     EventPlanner testPlanner = new EventPlanner();
     assertEquals(false, testPlanner.setFood("Macedonian"));
   }
+
+  @Test
+  public void setEntertainment_checkIfEntertainmentIsIncluded_true() {
+    EventPlanner testPlanner = new EventPlanner();
+    assertEquals(true, testPlanner.setEntertainment("DJ"));
+  }
 }
