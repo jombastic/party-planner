@@ -16,4 +16,10 @@ public class EventPlannerTest {
     EventPlanner testPlanner = new EventPlanner();
     assertEquals(true, testPlanner.setDrinkType("alcohol"));
   }
+
+  @Test
+  public void setDrinkType_checkIfDrinkIsAnOption_false() {
+    EventPlanner testPlanner = new EventPlanner();
+    assertEquals(false, testPlanner.setDrinkType("booze"));
+  }
 }
