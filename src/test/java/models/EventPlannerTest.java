@@ -28,4 +28,10 @@ public class EventPlannerTest {
     EventPlanner testPlanner = new EventPlanner();
     assertEquals(true, testPlanner.setFood("french"));
   }
+
+  @Test
+  public void setFood_checkIfFoodIsAnOption_false() {
+    EventPlanner testPlanner = new EventPlanner();
+    assertEquals(false, testPlanner.setFood("Macedonian"));
+  }
 }
