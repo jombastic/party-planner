@@ -46,4 +46,10 @@ public class EventPlannerTest {
     EventPlanner testPlanner = new EventPlanner();
     assertEquals(false, testPlanner.setEntertainment("metallica"));
   }
+
+  @Test
+  public void setLocation_checkForLocation_true() {
+    EventPlanner testPlanner = new EventPlanner();
+    assertEquals(true, testPlanner.setLocation("ranch"));
+  }
 }

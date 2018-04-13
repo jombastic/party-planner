@@ -9,6 +9,7 @@ public class EventPlanner {
   private String entertainment;
   private String[] entertainmentTypes = {"DJ", "Local Band", "Both"};
   private String location;
+  private String[] locationTypes = {"Restaurant", "ranch", "hotel suite"};
 
   /*public EventPlanner(int guests, String drinkType, String food, String entertainment, String location) {
     this.guests = guests;
@@ -78,6 +79,19 @@ public class EventPlanner {
     }
     System.out.println("Entertainment type not recognised. Please enter from the following:" +
             String.join(", ", entertainmentTypes));
+    return false;
+  }
+
+  public boolean setLocation(String location) {
+    for (String locationType : locationTypes) {
+      if (location.equalsIgnoreCase(locationType)) {
+        return true;
+      } else {
+        this.location = location;
+      }
+    }
+    System.out.println("Location type not recognised. Please enter from the following:" +
+            String.join(", ", locationTypes));
     return false;
   }
 }
